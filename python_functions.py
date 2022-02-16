@@ -7,7 +7,7 @@ def isPalindrome(str_val):
     if len(str_val) > 0:
         str_val = str_val.replace(" ", "") #empty strings
         revString = str_val[::-1]
-        if str_val == revString:
+        if str_val.lower() == revString.lower():
             return True
     return False   
 
