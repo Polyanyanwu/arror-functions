@@ -20,3 +20,16 @@ const complexNumbers = (a, b) => {
 let num = complexNumbers(2, 2);
 console.log(num);
 
+const isPalindrome = (str)=> {
+    if(str.length > 0){
+        str = str.toLowerCase();
+        str = str.split(" ").join(''); // remove lower cases
+        console.log(str);
+        const reverseStr = [...str].reverse().join(''); // create array of each letter, reverse the array and join again with empty string
+        console.log(reverseStr);
+        if(reverseStr === str) return true;
+    }
+    return false;
+    }
+console.log(isPalindrome("ra ce   car"));
+console.log(isPalindrome("mumy"));
