@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script>
+        fetch("https://ci-swapi.herokuapp.com/api/")
+            .then(response => response.json()) // or .json()
+            .then(data => {
+                console.log(data);
+                const {people, planets, species, films, vehicles, starships} = data;
+                // document.getElementById("content").innerText = JSON.stringify(data);
+                document.getElementById("content").innerText =people +"\n" + planets +"\n" + species+ "\n"+films+ "\n"+vehicles+ "\n"+ starships;
+            }) 
+            .catch((e)=>{
+                console.error("Error occured: ", e);
+            });
+    </script>
+</body>
+
+</html>
